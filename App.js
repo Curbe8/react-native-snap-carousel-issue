@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { View, Text, SafeAreaView, StyleSheet } from "react-native";
 import 'react-native-gesture-handler';
-import JourneyList from "./JourneyList";
 import Swiper from 'react-native-swiper';
+import PostsList from "./PostsList";
 
 export default class App extends Component {
   constructor(props) {
@@ -18,7 +18,7 @@ export default class App extends Component {
             {this.renderContent()}
           </View>
           <View style={styles.flex}>
-            <JourneyList />
+            <PostsList />
           </View>
         </Swiper>
       </SafeAreaView>

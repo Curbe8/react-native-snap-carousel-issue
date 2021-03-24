@@ -4,7 +4,7 @@ import Carousel, { Pagination } from 'react-native-snap-carousel';
 
 const screenWidth = Dimensions.get('window').width;
 
-class JourneyList extends Component {
+class PostsList extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -183,4 +183,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default JourneyList;
+export default PostsList;
