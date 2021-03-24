@@ -1,21 +1,50 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from "react";
+import { View, Text, SafeAreaView, StyleSheet } from "react-native";
+import 'react-native-gesture-handler';
+import JourneyList from "./JourneyList";
+import Swiper from 'react-native-swiper';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <SafeAreaView style={styles.flex}>
+        <Swiper loop={false} showsPagination={false}
+          scrollEnabled={true} horizontal={true} >
+          <View style={[styles.flex, styles.contentHome]}>
+            {this.renderContent()}
+          </View>
+          <View style={styles.flex}>
+            <JourneyList />
+          </View>
+        </Swiper>
+      </SafeAreaView>
+    );
+  }
+
+
+  renderContent = () => {
+    return (
+      <View>
+        <Text style={styles.text}>Home</Text>
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+  text: {
+    textAlign: 'center',
+    fontSize: 30,
+    textAlignVertical: 'center',
+  },
+  flex: {
+    flex: 1
+  },
+  contentHome: {
+    backgroundColor: '#CCCCCC'
   },
 });
